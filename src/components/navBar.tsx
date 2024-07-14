@@ -16,7 +16,7 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-  const { loading, error, isAuthenticated } = useSelector((state: RootState) => state.auth);
+  const {  isAuthenticated } = useSelector((state: RootState) => state.auth);
 
 
 

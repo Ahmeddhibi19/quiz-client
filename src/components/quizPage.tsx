@@ -12,7 +12,6 @@ interface QuizProps {
 
 const Quiz: React.FC<QuizProps> = ({ handleClick }) => {
   const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(0);
   const quizQuestions = useSelector((state: RootState) => state.quiz.questions);
   const selectedAnswers = useSelector((state: RootState) => state.quiz.selectedAnswers);
 

@@ -2,14 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from '../redux/store';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
 
 const GetStarted: React.FC = () => {
   const waveRefs = useRef<HTMLDivElement[]>([]);
-  const dispatch = useDispatch<AppDispatch>();
-const { loading, error, isAuthenticated } = useSelector((state: RootState) => state.auth);
+const { isAuthenticated } = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
     if (waveRefs.current) {

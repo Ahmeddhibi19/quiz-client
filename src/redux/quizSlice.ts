@@ -5,10 +5,10 @@ interface QuizState {
   questions: {
     question: string;
     answers: string[];
-    correctAnswerIndex: number | null; // null for text input questions
-    type: 'multiple-choice' | 'text'; // Added type field
+    correctAnswerIndex: number | null; 
+    type: 'multiple-choice' | 'text'; 
   }[];
-  selectedAnswers: (number | string)[]; // Array can now hold indices for multiple-choice and strings for text input
+  selectedAnswers: (number | string)[]; 
   loading: boolean;
   response: string | null;
 }
@@ -64,7 +64,7 @@ const initialState: QuizState = {
       type: 'text',
     },
   ],
-  selectedAnswers: Array(8), // Adjust array size according to the number of questions
+  selectedAnswers: Array(8), 
   loading: false,
   response: null,
 };
@@ -81,7 +81,6 @@ export const submitDataToServer = createAsyncThunk(
       })),
     };
     console.log(data);
-    // Replace with your API endpoint
     const response = await fetch('/api/submit', {
       method: 'POST',
       headers: {
@@ -106,7 +105,6 @@ const quizSlice = createSlice({
       state.selectedAnswers[questionIndex] = answer;
     },
     submitQuiz(state) {
-      // Additional logic before submitting, if necessary
     },
   },
   extraReducers: (builder) => {
